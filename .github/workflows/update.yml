@@ -19,8 +19,8 @@ jobs:
         run: python main.py
       - name: Commit and Push
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add aura.svg
-          git commit -m "chore: update aura badge [skip ci]" || exit 0
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add aura.svg streak.txt  # Added streak.txt here!
+          git commit -m "update: focus streak" || exit 0
           git push
