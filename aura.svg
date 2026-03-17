@@ -1,17 +1,9 @@
 
-    <svg width="180" height="28" viewBox="0 0 180 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="180" height="28" fill="#1A1A1A"/> 
-      
-      <rect width="6" height="28" fill="#FF4500"/>
-      
-      <circle cx="22" cy="14" r="4" fill="#FF4500">
-        <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
-      </circle>
-
-      <text x="36" y="18" fill="white" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1.2px;">
-        AURA | WINDING DOWN
+    <svg width="220" height="28" viewBox="0 0 220 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="220" height="28" fill="#1A1A1A"/> 
+      <rect width="6" height="28" fill="#70FF9D"/>
+      <text x="15" y="18" fill="white" style="font-family: 'Segoe UI', sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+        FOCUS STREAK | 1 DAYS 🔥
       </text>
-      
-      <rect x="0.5" y="0.5" width="179" height="27" stroke="white" stroke-opacity="0.1"/>
     </svg>
     
