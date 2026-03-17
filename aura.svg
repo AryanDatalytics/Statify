@@ -1,9 +1,8 @@
-
-    <svg width="220" height="28" viewBox="0 0 220 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="220" height="28" fill="#1A1A1A"/> 
-      <rect width="6" height="28" fill="#70FF9D"/>
-      <text x="15" y="18" fill="white" style="font-family: 'Segoe UI', sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-        FOCUS STREAK | 1 DAYS 🔥
-      </text>
-    </svg>
-    
+<svg width="250" height="28" viewBox="0 0 250 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="28" fill="#1A1A1A"/> 
+  <rect width="6" height="28" fill="#70FF9D"/>
+  <text x="20" y="18" fill="white" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase;">
+    STREAK: 1 DAYS 🔥
+  </text>
+  <rect x="0.5" y="0.5" width="249" height="27" stroke="white" stroke-opacity="0.1"/>
+</svg>
