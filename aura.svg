@@ -1,7 +1,7 @@
-<svg width="250" height="28" xmlns="http://www.w3.org/2000/svg">
-      <rect width="250" height="28" fill="#1A1A1A"/>
-      <rect width="6" height="28" fill="#70FF9D"/>
-      <text x="20" y="18" fill="white" font-family="Arial" font-size="12" font-weight="bold">
-        🔥 ACTIVITY STREAK: 2 DAYS
+<svg width="240" height="28" viewBox="0 0 240 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="240" height="28" fill="#1A1A1A"/>
+      <rect width="6" height="28" fill="#FF4500"/>
+      <text x="20" y="18" fill="white" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase;">
+        🔥 REAL-TIME STREAK: 17 DAYS
       </text>
     </svg>
