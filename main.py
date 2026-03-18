@@ -1,67 +1,72 @@
-import datetime
 import os
 import requests
+import datetime
 
-# GitHub Config
-USERNAME = "AryanDatalytics" # Apna exact username check kar lena
-GITHUB_TOKEN = os.getenv("GH_TOKEN") # Security ke liye Secret use karenge
+# Config
+USERNAME = "AryanDatalytics"
+TOKEN = os.getenv("GH_TOKEN")
 
-def check_github_activity():
-    url = f"https://api.github.com/users/{USERNAME}/events"
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+def get_streak():
+    # GraphQL Query to get contribution calendar
+    query = """
+    query($login:String!) {
+      user(login:$login) {
+        contributionsCollection {
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    headers = {"Authorization": f"Bearer {TOKEN}"}
+    response = requests.post('https://api.github.com/graphql', 
+                             json={'query': query, 'variables': {'login': USERNAME}}, 
+                             headers=headers)
     
-    response = requests.get(url, headers=headers)
     if response.status_code != 200:
-        return False
-        
-    events = response.json()
-    today = datetime.datetime.utcnow().date()
+        return 0
+
+    # Flatten the weeks into a list of daily counts
+    data = response.json()['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+    days = [day for week in data for day in week['contributionDays']]
+    days.reverse() # Start from today and go backwards
+
+    streak = 0
+    today = datetime.datetime.now().date()
     
-    for event in events:
-        # Check if event happened today (UTC)
-        event_date = datetime.datetime.strptime(event['created_at'], "%Y-%m-%dT%H:%M:%SZ").date()
-        if event_date == today:
-            # Commit, Star, PR, ya Issue creation sab count hoga
-            return True
-    return False
-
-def update_streak(active_today):
-    today = datetime.datetime.utcnow().date()
-    streak_file = "streak.txt"
-    streak = 15 # Aapka base streak yahan se shuru hoga
-
-    if os.path.exists(streak_file):
-        with open(streak_file, "r") as f:
-            data = f.read().split(",")
-            streak = int(data[0])
-            last_date = datetime.datetime.strptime(data[1], "%Y-%m-%d").date()
-
-        if last_date == today:
-            return streak # Aaj ka update pehle hi ho gaya
-            
-        if active_today:
-            if last_date == today - datetime.timedelta(days=1):
-                streak += 1
-            else:
-                streak = 1 # Kal miss ho gaya tha
-    
-    with open(streak_file, "w") as f:
-        f.write(f"{streak},{today}")
+    for day in days:
+        date = datetime.datetime.strptime(day['date'], "%Y-%m-%d").date()
+        # If it's today and 0, skip to yesterday to check the continuing streak
+        if date == today and day['contributionCount'] == 0:
+            continue
+        if day['contributionCount'] > 0:
+            streak += 1
+        else:
+            break
     return streak
 
 def generate_svg(streak):
+    # Same aesthetic as before, but with the REAL streak number
+    width = 240
     color = "#FF4500" if streak > 10 else "#70FF9D"
-    svg = f"""<svg width="250" height="28" xmlns="http://www.w3.org/2000/svg">
-      <rect width="250" height="28" fill="#1A1A1A"/>
+    
+    svg = f"""<svg width="{width}" height="28" viewBox="0 0 {width} 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="{width}" height="28" fill="#1A1A1A"/>
       <rect width="6" height="28" fill="{color}"/>
-      <text x="20" y="18" fill="white" font-family="Arial" font-size="12" font-weight="bold">
-        🔥 ACTIVITY STREAK: {streak} DAYS
+      <text x="20" y="18" fill="white" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase;">
+        🔥 REAL-TIME STREAK: {streak} DAYS
       </text>
     </svg>"""
+    
     with open("aura.svg", "w") as f:
         f.write(svg)
 
 if __name__ == "__main__":
-    is_active = check_github_activity()
-    s = update_streak(is_active)
-    generate_svg(s)
+    current_streak = get_streak()
+    generate_svg(current_streak)
