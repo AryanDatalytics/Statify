@@ -1,7 +1,19 @@
-<svg width="240" height="28" viewBox="0 0 240 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="240" height="28" fill="#1A1A1A"/>
-      <rect width="6" height="28" fill="#FF4500"/>
-      <text x="20" y="18" fill="white" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase;">
-        🔥 REAL-TIME STREAK: 18 DAYS
-      </text>
-    </svg>
+<svg width="250" height="35" viewBox="0 0 250 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="35" rx="4" fill="#1A1A1A"/>
+  
+  <g transform="translate(10, 2.5) scale(1.25)">
+    <path d="M12 2C10.9 2 10 2.9 10 4C10 4.6 10.2 5.1 10.5 5.5C8.9 6.2 8 7.9 8 10C8 12.2 9.8 14 12 14C14.2 14 16 12.2 16 10C16 7.9 15.1 6.2 13.5 5.5C13.8 5.1 14 4.6 14 4C14 2.9 13.1 2 12 2ZM12 4C12 4 12 4.1 12 4.1C12 4.1 12 4 12 4ZM12 8C13.1 8 14 8.9 14 10C14 11.1 13.1 12 12 12C10.9 12 10 11.1 10 10C10 8.9 10.9 8 12 8Z" fill="#FF4500">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <text x="12" y="11" fill="white" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="6" font-weight="bold">
+        18
+    </text>
+  </g>
+  
+  <text x="45" y="22" fill="white" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" text-transform="uppercase">
+    DAY FOCUS STREAK
+  </text>
+  
+  <rect x="0.5" y="0.5" width="249" height="34" rx="3.5" stroke="white" stroke-opacity="0.05"/>
+</svg>
