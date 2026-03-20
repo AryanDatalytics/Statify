@@ -101,7 +101,7 @@ def generate_fire_streak_badge(streak):
     with open("aura.svg", "w", encoding='utf-8') as f:
         f.write(svg_content)
 
-# --- MAIN EXECUTION ---
+# --- MAIN EXECUTION --
 if __name__ == "__main__":
     current_streak = get_streak_from_history()
     print(f"🔥 Current streak detected: {current_streak} days")
