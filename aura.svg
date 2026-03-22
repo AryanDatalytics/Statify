@@ -22,7 +22,7 @@
     </circle>
     <path d="M82.5 30C82.5 30 78 36 78 40C78 42.5 80 44.5 82.5 44.5C85 44.5 87 42.5 87 40C87 36 82.5 30 82.5 30Z" fill="#FF1E6D"/>
     
-    <text x="82.5" y="98" text-anchor="middle" class="streak-num">0</text>
+    <text x="82.5" y="98" text-anchor="middle" class="streak-num">19</text>
     <text x="82.5" y="150" text-anchor="middle" class="pink-text" style="font-weight:bold; letter-spacing:1px;">CURRENT STREAK</text>
   </g>
 
