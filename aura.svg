@@ -9,7 +9,7 @@
   </style>
 
   <g transform="translate(0,0)">
-    <text x="82" y="85" text-anchor="middle" class="val">205</text>
+    <text x="82" y="85" text-anchor="middle" class="val">206</text>
     <text x="82" y="120" text-anchor="middle" class="label">Total Contributions</text>
   </g>
 
@@ -17,14 +17,14 @@
 
   <g transform="translate(165,0)">
     <circle cx="82" cy="80" r="45" stroke="#FF1E6D" stroke-width="4" opacity="0.8" />
-    <text x="82" y="92" text-anchor="middle" class="streak-val">20</text>
+    <text x="82" y="92" text-anchor="middle" class="streak-val">0</text>
     <text x="82" y="145" text-anchor="middle" class="pink">Current Streak</text>
   </g>
 
   <line x1="330" y1="40" x2="330" y2="155" stroke="#30363D" />
 
   <g transform="translate(330,0)">
-    <text x="82" y="85" text-anchor="middle" class="val">20</text>
+    <text x="82" y="85" text-anchor="middle" class="val">21</text>
     <text x="82" y="120" text-anchor="middle" class="label">Longest Streak</text>
   </g>
 </svg>
