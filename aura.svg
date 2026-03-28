@@ -17,7 +17,7 @@
 
   <g transform="translate(165,0)">
     <circle cx="82" cy="80" r="45" stroke="#FF1E6D" stroke-width="4" opacity="0.8" />
-    <text x="82" y="92" text-anchor="middle" class="streak-val">0</text>
+    <text x="82" y="92" text-anchor="middle" class="streak-val">1</text>
     <text x="82" y="145" text-anchor="middle" class="pink">Current Streak</text>
   </g>
 
